@@ -1,0 +1,10 @@
+def show(df):
+            nwn = Toplevel()
+            nwn.title("Form")
+            scrollbar = Scrollbar(nwn)
+            scrollbar.pack(side=RIGHT, fill=Y)
+            text_widget = Text(nwn, yscrollcommand=scrollbar.set)
+            text_widget.pack(expand=True, fill=BOTH)
+            scrollbar.config(command=text_widget.yview)
+            text_widget.insert(END, df.to_string(index=False))
+            text_widget.configure(state='disabled')
